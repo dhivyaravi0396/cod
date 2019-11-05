@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package Modulebazaar_PayForCOD
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="payforcod_tab" translate="label" sortOrder="400">
+            <label>Modulebazaar</label>
+        </tab>
+        <section id="payforcod" translate="label" sortOrder="505" showInDefault="1" showInStore="1" showInWebsite="1">
+            <class>separator-top</class>
+            <label>Pay For COD</label>
+            <tab>payforcod_tab</tab>
+            <resource>Modulebazaar_PayForCOD::config_payforcod</resource>
+            <group id="general_configuration" translate="label" showInDefault="1" showInWebsite="0" showInStore="0"
+                   sortOrder="1">
+                <label>General Configuration</label>
+                <field id="enable" type="select" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="1">
+                    <label>Enable/Disable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enable_on_type" type="multiselect" translate="label" sortOrder="2" showInDefault="1" showInStore="0"
+                       showInWebsite="0">
+                    <label>Pay-COD Status</label>
+                    <source_model>Modulebazaar\PayForCOD\Model\Config\Source\CODType</source_model>
+                    <comment>Pay-COD option will be available in my orders when this status matches.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

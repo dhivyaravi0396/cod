@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package Modulebazaar_PayForCOD
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Modulebazaar\PayForCOD\Api\PayForCODInterface"
+                type="Modulebazaar\PayForCOD\Model\PayForCOD"/>
+    <!-- Plugin On Order Repository for Get List Method -->
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="pay_forCOD_plugin"
+                type="Modulebazaar\PayForCOD\Plugin\OrderRepositoryPlugin"
+                disabled="false"/>
+    </type>
+</config>

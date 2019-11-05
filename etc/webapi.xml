@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package Modulebazaar_PayForCOD
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!--
+    Modulebazaar Pay Now for Converting Pending Payment Orders into
+    pending or processed orders based on payment gateway option chosen
+  -->
+    <route method="POST" url="/V1/PayForCOD">
+        <service class="Modulebazaar\PayForCOD\Api\PayForCODInterface" method="placeOrder"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>
